@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Card from '../components/molecules/Card';
+import Card from '../components/molecules/Card'; // Import the CardCarousel component
 import Navbar from '@/components/molecules/Navbar';
 import Footer from '@/components/molecules/Footer';
 
@@ -16,27 +16,19 @@ const Home = ({ data }) => {
       <Navbar />
       {/* Navbar End */}
       {/* Main content */}
-      <div className="row">
-        <div className="col-md-6">
-          <div className="section-1">
-            풀타임, 파트타임
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            Fajar ganteng Banget
           </div>
-          <div className="section-2">
-            
+          <div className="col-md-6">
+            <Card data={data} />
           </div>
         </div>
-        <div className="col-md-6">
-        {data.map((item, index) => (
-          <Card
-            key={index}
-            name={item.name}
-            job={item.job}
-            experience={item.experience}
-            skills={item.skills}
-            salary={item.salary}
-            imgSrc={item.imgSrc}
-          />
-        ))}
+        <div className="row">
+          <div className="col-md-12">
+            
+          </div>
         </div>
       </div>
       {/* Main Content End */}
